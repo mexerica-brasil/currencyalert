@@ -22,10 +22,12 @@ public class ExchangeRateService {
 
             // Verifica se os dados esperados estão presentes
             JsonNode exchangeRateNode = jsonNode.get("Realtime Currency Exchange Rate");
+            
             if (exchangeRateNode != null) {
                 return objectMapper.treeToValue(exchangeRateNode, RealtimeCurrencyExchangeRate.class);
             } else {
-                throw new Exception("Dados de taxa de câmbio não encontrados");
+                //throw new Exception("Dados de taxa de câmbio não encontrados");
+                throw new Exception(response);
             }
         } catch (Exception e) {
             throw new Exception("Erro ao consultar a API da Alpha Vantage: " + e.getMessage());
