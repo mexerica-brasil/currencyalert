@@ -35,10 +35,8 @@ public class CoinGeckoService {
             headers.set("Content-type", "application/json");
             HttpEntity<String> entity = new HttpEntity<>(headers);
 
-
             CoinPriceResponse price =  restTemplate.exchange(url, HttpMethod.GET, entity, CoinPriceResponse.class).getBody();
 
-            
             return price;
         } catch (Exception e) {
             throw new RuntimeException("Erro ao chamar a API da CoinGecko: " + e.getMessage());

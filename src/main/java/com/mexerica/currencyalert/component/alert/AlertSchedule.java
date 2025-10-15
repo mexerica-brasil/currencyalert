@@ -24,11 +24,9 @@ public class AlertSchedule {
 
     @Scheduled(fixedRate = 4000) 
     public void executarTarefa() {
-        
         CoinPriceResponse coinPrices = coinGeckoService.getCoinPrices(alertValue.getCoinsID(), "usd");
 
         if (coinPrices != null) {
-
             alertValue.getAlertValue().forEach((coinId, flashValue) -> {
                 if (coinPrices.getPrices().containsKey(coinId)) {
                     BigDecimal currentPrice = coinPrices.getPrices().get(coinId).get("usd");
