@@ -15,6 +15,7 @@ public class SenderAlert {
     @Autowired 
     public SenderAlert(Map<String, StrategyAlert> strategies) {
         this.strategies = strategies;
+        
         strategyAlert = this.strategies.get("call");
         
         /*

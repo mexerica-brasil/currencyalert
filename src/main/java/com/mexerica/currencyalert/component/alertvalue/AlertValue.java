@@ -14,6 +14,7 @@ public class AlertValue {
     private final Map<String, FlashValue> alertValue = new HashMap<>();
 
     public AlertValue() {
+        
         this.alertValue.put("xdce-crowd-sale", new FlashValue(new BigDecimal("0.008"), new BigDecimal("5.50"), null));
         this.alertValue.put("stellar", new FlashValue(new BigDecimal("0.115"), new BigDecimal("5.83"), null));
         this.alertValue.put("ripple", new FlashValue(new BigDecimal("0.887"), new BigDecimal("5.83"), null));

@@ -25,6 +25,7 @@ public class AlertZap implements StrategyAlert {
 
     public void sendAlert(String texto) {
         Twilio.init(sid, token);
+        
         Message message = Message.creator(new PhoneNumber(whatsappToPhone),
                                             whatsappServiceSid,
                                             texto) .create();

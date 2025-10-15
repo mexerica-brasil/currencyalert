@@ -26,6 +26,7 @@ public class AlertCall implements StrategyAlert {
 
     public void sendAlert(String texto) {
         Twilio.init(sid, token);
+        
         Execution execution = Execution.creator(callServiceSid,
                                                 new com.twilio.type.PhoneNumber(toPhone),
                                                 new com.twilio.type.PhoneNumber(fromPhone))

@@ -24,6 +24,7 @@ public class AlertSchedule {
 
     @Scheduled(fixedRate = 4000) 
     public void executarTarefa() {
+        
         CoinPriceResponse coinPrices = coinGeckoService.getCoinPrices(alertValue.getCoinsID(), "usd");
 
         if (coinPrices != null) {
