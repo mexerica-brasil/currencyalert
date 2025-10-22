@@ -7,23 +7,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mexerica.currencyalert.model.CoinPriceResponse;
-import com.mexerica.currencyalert.service.CoinGeckoService;
+import com.mexerica.currencyalert.model.LiveCoinResponse;
+import com.mexerica.currencyalert.service.LiveCoinWatchService;
 
 @RestController
 @RequestMapping("/api")
-public class CoinGeckoController {
+public class LiveCoinController {
 
     @Autowired
-    private CoinGeckoService coinGeckoService;
+    private LiveCoinWatchService liveCoinService;
 
-    @GetMapping(value = "/coin-prices2", produces = {"application/json"})
-    public ResponseEntity<CoinPriceResponse> getCoinPrices(
-            @RequestParam String ids,
-            @RequestParam(defaultValue = "usd") String vsCurrencies) {
+    @GetMapping(value = "/coin-prices", produces = {"application/json"})
+    public ResponseEntity<LiveCoinResponse> getCoinPrices(
+            @RequestParam String id,
+            @RequestParam(defaultValue = "usd") String vsCurrency) {
         
         try {
-            CoinPriceResponse coinPrices = coinGeckoService.getCoinPrices(ids, vsCurrencies);
+
+            LiveCoinResponse coinPrices = liveCoinService.getCoinPrices(id, vsCurrency);
 
             return ResponseEntity.ok(coinPrices);
         } catch (Exception e) {

@@ -14,6 +14,7 @@ public class AlertValue {
     private final Map<String, FlashValue> alertValue = new HashMap<>();
 
     public AlertValue() {
+        /*
         this.alertValue.put("xdce-crowd-sale", new FlashValue(new BigDecimal("0.008"), new BigDecimal("5.50"), null));
         this.alertValue.put("stellar", new FlashValue(new BigDecimal("0.115"), new BigDecimal("5.83"), null));
         this.alertValue.put("ripple", new FlashValue(new BigDecimal("0.887"), new BigDecimal("5.83"), null));
@@ -25,7 +26,21 @@ public class AlertValue {
         this.alertValue.put("pepe", new FlashValue(new BigDecimal("0.0000007"), new BigDecimal("0.007"), null));
         this.alertValue.put("crepe-2", new FlashValue(new BigDecimal("0.000007"), new BigDecimal("0.007"), null));
         this.alertValue.put("wiki-cat", new FlashValue(new BigDecimal("0.00000007"), new BigDecimal("0.00006"), null));
-        this.alertValue.put("turbo", new FlashValue(new BigDecimal("0.0001"), new BigDecimal("0.01"), null));
+        this.alertValue.put("turbo", new FlashValue(new BigDecimal("0.0001"), new BigDecimal("0.01"), null)); */
+
+        this.alertValue.put("XDC", new FlashValue(new BigDecimal("0.008"), new BigDecimal("5.50"), null));
+        this.alertValue.put("XLM", new FlashValue(new BigDecimal("0.115"), new BigDecimal("5.83"), null));
+        this.alertValue.put("XRP", new FlashValue(new BigDecimal("0.887"), new BigDecimal("5.83"), null));
+        this.alertValue.put("BTC", new FlashValue(new BigDecimal("33973.00"), new BigDecimal("186667.00"), null));
+        this.alertValue.put("ETH", new FlashValue(new BigDecimal("1000.00"), new BigDecimal("10000.00"), null));
+        this.alertValue.put("SHIB", new FlashValue(new BigDecimal("0.0000046"), new BigDecimal("0.007"), null));
+        //this.alertValue.put("toshi", new FlashValue(new BigDecimal("0.000001"), new BigDecimal("0.01"), null));
+        this.alertValue.put("LUNC", new FlashValue(new BigDecimal("0.000024"), new BigDecimal("0.007"), null));
+        this.alertValue.put("____PEPE", new FlashValue(new BigDecimal("0.0000007"), new BigDecimal("0.007"), null));
+        //this.alertValue.put("crepe-2", new FlashValue(new BigDecimal("0.000007"), new BigDecimal("0.007"), null));
+        //this.alertValue.put("wiki-cat", new FlashValue(new BigDecimal("0.00000007"), new BigDecimal("0.00006"), null));
+        //this.alertValue.put("turbo", new FlashValue(new BigDecimal("0.0001"), new BigDecimal("0.01"), null)); */
+
     }
 
     public Map<String, FlashValue> getAlertValue() {
