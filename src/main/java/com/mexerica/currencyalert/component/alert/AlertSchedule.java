@@ -51,7 +51,21 @@ public class AlertSchedule {
         }
     }
 
-    @Scheduled(fixedRate = 8000) 
+    @Scheduled(cron = "0 */10 9-18 * * *")
+    public void chamarLiveCoinHorarioComercial() {
+        this.executarTarefaLiveCoin();
+    }
+
+    @Scheduled(cron = "0 */2 19-23 * * *")
+    public void chamarLiveCoinHorarioNoite() {
+        this.executarTarefaLiveCoin();
+    }
+
+    @Scheduled(cron = "0 */2 0-8 * * *")
+    public void chamarLiveCoinHorarioMadrugada() {
+        this.executarTarefaLiveCoin();
+    }
+
     public void executarTarefaLiveCoin() {
         Map<String, LiveCoinResponse> prices = getCoinPrices();
 
