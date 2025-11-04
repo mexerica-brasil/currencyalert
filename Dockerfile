@@ -15,7 +15,7 @@ ENV LIVECOIN_API_KEY=$LIVECOIN_API_KEY
 RUN apt-get install maven -y
 RUN mvn clean install
 
-FROM openjdk:17-jdk
+#FROM openjdk:17-jdk
 
 EXPOSE  8080
 
