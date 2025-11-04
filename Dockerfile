@@ -16,7 +16,7 @@ RUN apt-get install maven -y
 RUN mvn clean install
 
 
-FROM openjdk:17-jdk-slim
+FROM openjdk:17-jdk-oracle
 
 
 EXPOSE  8080
