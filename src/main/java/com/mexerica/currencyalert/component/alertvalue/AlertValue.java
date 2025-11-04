@@ -13,20 +13,21 @@ public class AlertValue {
 
     private final Map<String, FlashValue> alertValue = new HashMap<>();
 
+    private final Map<String, FlashValue> alertValueGencko = new HashMap<>();
+
     public AlertValue() {
-        /*
-        this.alertValue.put("xdce-crowd-sale", new FlashValue(new BigDecimal("0.008"), new BigDecimal("5.50"), null));
-        this.alertValue.put("stellar", new FlashValue(new BigDecimal("0.115"), new BigDecimal("5.83"), null));
-        this.alertValue.put("ripple", new FlashValue(new BigDecimal("0.887"), new BigDecimal("5.83"), null));
-        this.alertValue.put("bitcoin", new FlashValue(new BigDecimal("33973.00"), new BigDecimal("186667.00"), null));
-        this.alertValue.put("ethereum", new FlashValue(new BigDecimal("1000.00"), new BigDecimal("10000.00"), null));
-        this.alertValue.put("shiba-inu", new FlashValue(new BigDecimal("0.0000046"), new BigDecimal("0.007"), null));
-        this.alertValue.put("toshi", new FlashValue(new BigDecimal("0.000001"), new BigDecimal("0.01"), null));
-        this.alertValue.put("terra-luna", new FlashValue(new BigDecimal("0.000024"), new BigDecimal("0.007"), null));
-        this.alertValue.put("pepe", new FlashValue(new BigDecimal("0.0000007"), new BigDecimal("0.007"), null));
-        this.alertValue.put("crepe-2", new FlashValue(new BigDecimal("0.000007"), new BigDecimal("0.007"), null));
-        this.alertValue.put("wiki-cat", new FlashValue(new BigDecimal("0.00000007"), new BigDecimal("0.00006"), null));
-        this.alertValue.put("turbo", new FlashValue(new BigDecimal("0.0001"), new BigDecimal("0.01"), null)); */
+        this.alertValueGencko.put("xdce-crowd-sale", new FlashValue(new BigDecimal("0.008"), new BigDecimal("5.50"), null));
+        this.alertValueGencko.put("stellar", new FlashValue(new BigDecimal("0.115"), new BigDecimal("5.83"), null));
+        this.alertValueGencko.put("ripple", new FlashValue(new BigDecimal("0.887"), new BigDecimal("5.83"), null));
+        this.alertValueGencko.put("bitcoin", new FlashValue(new BigDecimal("33973.00"), new BigDecimal("186667.00"), null));
+        this.alertValueGencko.put("ethereum", new FlashValue(new BigDecimal("1000.00"), new BigDecimal("10000.00"), null));
+        this.alertValueGencko.put("shiba-inu", new FlashValue(new BigDecimal("0.0000046"), new BigDecimal("0.007"), null));
+        this.alertValueGencko.put("toshi", new FlashValue(new BigDecimal("0.000001"), new BigDecimal("0.01"), null));
+        this.alertValueGencko.put("terra-luna", new FlashValue(new BigDecimal("0.000024"), new BigDecimal("0.007"), null));
+        this.alertValueGencko.put("pepe", new FlashValue(new BigDecimal("0.0000007"), new BigDecimal("0.007"), null));
+        this.alertValueGencko.put("crepe-2", new FlashValue(new BigDecimal("0.000007"), new BigDecimal("0.007"), null));
+        this.alertValueGencko.put("wiki-cat", new FlashValue(new BigDecimal("0.00000007"), new BigDecimal("0.00006"), null));
+        this.alertValueGencko.put("turbo", new FlashValue(new BigDecimal("0.0001"), new BigDecimal("0.01"), null)); 
 
         this.alertValue.put("XDC", new FlashValue(new BigDecimal("0.008"), new BigDecimal("5.50"), null));
         this.alertValue.put("XLM", new FlashValue(new BigDecimal("0.115"), new BigDecimal("5.83"), null));
@@ -34,13 +35,8 @@ public class AlertValue {
         this.alertValue.put("BTC", new FlashValue(new BigDecimal("33973.00"), new BigDecimal("186667.00"), null));
         this.alertValue.put("ETH", new FlashValue(new BigDecimal("1000.00"), new BigDecimal("10000.00"), null));
         this.alertValue.put("SHIB", new FlashValue(new BigDecimal("0.0000046"), new BigDecimal("0.007"), null));
-        //this.alertValue.put("toshi", new FlashValue(new BigDecimal("0.000001"), new BigDecimal("0.01"), null));
         this.alertValue.put("LUNC", new FlashValue(new BigDecimal("0.000024"), new BigDecimal("0.007"), null));
         this.alertValue.put("____PEPE", new FlashValue(new BigDecimal("0.0000007"), new BigDecimal("0.007"), null));
-        //this.alertValue.put("crepe-2", new FlashValue(new BigDecimal("0.000007"), new BigDecimal("0.007"), null));
-        //this.alertValue.put("wiki-cat", new FlashValue(new BigDecimal("0.00000007"), new BigDecimal("0.00006"), null));
-        //this.alertValue.put("turbo", new FlashValue(new BigDecimal("0.0001"), new BigDecimal("0.01"), null)); */
-
     }
 
     public Map<String, FlashValue> getAlertValue() {
@@ -57,5 +53,21 @@ public class AlertValue {
 
     public BigDecimal getRallyValue(String idCoin) {
         return getAlertValue().get(idCoin).getFrashRally();
+    }
+
+    public Map<String, FlashValue> getAlertValueGencko() {
+        return this.alertValueGencko;
+    }
+
+    public String getCoinsIDGencko() {
+        return String.join(",", getAlertValueGencko().keySet());
+    }
+
+    public BigDecimal getCrashValueGencko(String idCoin) {
+        return getAlertValueGencko().get(idCoin).getFrashCrash();
+    }
+
+    public BigDecimal getRallyValueGencko(String idCoin) {
+        return getAlertValueGencko().get(idCoin).getFrashRally();
     }
 }

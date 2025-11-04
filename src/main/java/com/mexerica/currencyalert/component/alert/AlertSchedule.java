@@ -31,9 +31,19 @@ public class AlertSchedule {
     @Autowired
     AlertValue alertValue;
 
+    @Scheduled(cron = "0 */5 19-23 * * *")
+    public void chamarGenckoNoite() {
+        this.executarTarefaCoinGecko();
+    }
+
+    @Scheduled(cron = "*/30 * 0-8 * * *")
+    public void chamarGenckoMadrugada() {
+        this.executarTarefaCoinGecko();
+    }
+
     //@Scheduled(fixedRate = 8000) 
     public void executarTarefaCoinGecko() {
-        CoinPriceResponse coinPrices = coinGeckoService.getCoinPrices(alertValue.getCoinsID(), "usd");
+        CoinPriceResponse coinPrices = coinGeckoService.getCoinPrices(alertValue.getCoinsIDGencko(), "usd");
 
         if (coinPrices != null) {
             alertValue.getAlertValue().forEach((coinId, flashValue) -> {
